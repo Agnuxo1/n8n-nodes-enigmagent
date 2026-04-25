@@ -1,0 +1,68 @@
+{
+  "name": "n8n-nodes-enigmagent",
+  "version": "0.1.0",
+  "description": "n8n community node — resolve EnigmAgent vault secrets at the boundary. LLMs and workflows manipulate {{PLACEHOLDER}} tokens; real API keys are substituted only at the HTTP boundary.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "enigmagent",
+    "mcp",
+    "secrets",
+    "vault",
+    "encryption",
+    "credentials",
+    "api-keys",
+    "ai-agents",
+    "security"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Agnuxo1/n8n-nodes-enigmagent",
+  "author": {
+    "name": "Francisco Angulo de Lafuente",
+    "email": "agnuxo1@gmail.com",
+    "url": "https://github.com/Agnuxo1"
+  },
+  "engines": {
+    "node": ">=18.10"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "echo 'no formatter configured'",
+    "lint": "echo 'no linter configured'",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/EnigmAgentApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/EnigmAgent/EnigmAgent.node.js",
+      "dist/nodes/EnigmAgentResolve/EnigmAgentResolve.node.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agnuxo1/n8n-nodes-enigmagent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Agnuxo1/n8n-nodes-enigmagent/issues"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.50.0",
+    "typescript": "^5.3.3"
+  }
+}
