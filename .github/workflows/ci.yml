@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['18', '20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build (tsc + gulp icons)
+        run: npm run build
+      - name: Verify dist artifacts exist
+        run: |
+          test -f dist/credentials/EnigmAgentApi.credentials.js
+          test -f dist/nodes/EnigmAgent/EnigmAgent.node.js
+          test -f dist/nodes/EnigmAgentResolve/EnigmAgentResolve.node.js
+          test -f dist/nodes/EnigmAgent/enigmagent.svg
+      - name: npm pack (dry run)
+        run: npm pack --dry-run

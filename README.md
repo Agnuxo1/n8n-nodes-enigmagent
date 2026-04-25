@@ -3,8 +3,11 @@
 > **Stop pasting raw API keys into n8n credentials and AI agent prompts.**
 > Resolve encrypted vault secrets at the HTTP boundary — your LLMs and your workflow JSON only ever see opaque placeholders like `{{OPENAI_KEY}}`.
 
+[![CI](https://github.com/Agnuxo1/n8n-nodes-enigmagent/actions/workflows/ci.yml/badge.svg)](https://github.com/Agnuxo1/n8n-nodes-enigmagent/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/n8n-nodes-enigmagent.svg)](https://www.npmjs.com/package/n8n-nodes-enigmagent)
+[![npm downloads](https://img.shields.io/npm/dw/n8n-nodes-enigmagent.svg)](https://www.npmjs.com/package/n8n-nodes-enigmagent)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Agnuxo1/n8n-nodes-enigmagent?style=social)](https://github.com/Agnuxo1/n8n-nodes-enigmagent)
 
 ---
 
